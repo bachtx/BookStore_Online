@@ -43,7 +43,7 @@
         <div class="main_header">
             <div class="box_main_header">
                 <h1><a href="home.html"><img src="images/logo.png" alt="logo" class="logo"/></a></h1>
-                <form action="" method="POST">
+                <form action="search.html" method="POST">
                     <input type="text" name="txtsearch" placeholder='Search'/>
                     <input type="submit" name="search" value=''/>
                 </form>
