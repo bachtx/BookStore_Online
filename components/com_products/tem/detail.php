@@ -101,4 +101,16 @@ if(isset($_GET['id']))
 	?>
 </div>
 <div style='clear:both;height:10px;'></div>
+<script type='text/javascript'>
+	$(document).ready(function(){
+		$('.btn_cart').click(function(){
+			var proid= $(this).attr('pro_id');
+			$.post('ajaxs/addcart.php',{'proid':proid},function(data){
+			alert(data);
+				//alert('Add Cart Sucess !');
+				//window:location="index.php?com=products&&viewtype=detail&&id="+proid;
+			})
+		})
+	})
+</script>
 <!--.like-->
