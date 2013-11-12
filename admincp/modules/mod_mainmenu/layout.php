@@ -3,9 +3,8 @@
     <li>
         <a href="index.php" class="active"><span>Systems</span></a>
         <ul class="submenu">                       
-			<li><a href="#"><span>Group Users</span></a></li>
-            <li><a href="#"><span>List Users</span></a></li>
-            <li><a href="#"><span>Personal Information</span></a></li>  
+			<li><a href="index.php?com=group&task=list"><span>Group Users</span></a></li>
+            <li><a href="index.php?com=users&task=list"><span>List Users</span></a></li>
             <li><a href="index.php?com=users&task=logout"><span>Logout</span></a></li>     				
         </ul>
     </li>
