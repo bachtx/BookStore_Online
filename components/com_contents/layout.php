@@ -1,3 +1,6 @@
+<div class="detail_jumlink">
+	<p>Home  <span class="bg_jumlink"></span>  <?php echo 'Support';?> </p>
+</div><!--detail_jumlink-->
 <div id="product_wapper">
 <?php
 $obj= new CLS_PRODUCTS();

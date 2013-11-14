@@ -68,9 +68,9 @@
         <td align="center">Name</td>
         <td align="center" width="400">Description</td>
         <td align="center">Level</td>
-        <td width="50" align="center">Public</td>
-        <td width="50" align="center">Edit</td>
-        <td width="50" align="center">Delete</td>
+<!--         <td width="50" align="center">Public</td> -->
+<!--         <td width="50" align="center">Edit</td> -->
+<!--         <td width="50" align="center">Delete</td> -->
       </tr>
       <?php
 	  $obj->listTableCate($strwhere,$cur_page,$parid,$level,0);

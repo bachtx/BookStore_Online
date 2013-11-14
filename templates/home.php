@@ -14,7 +14,6 @@
         $(function() {
             $( "#tabs_products" ).tabs();
         });
-		
     </script>
 	<script>(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
@@ -62,19 +61,26 @@
         <div class="nav_menu">
             <div class="box">
                 <ul>
-                    <li class="hover"><a href="home.html">Home</a></li>
-                    <li ><a href="products.html">Products</a></li>
-					<li ><a href="book1.html">Books 1$</a></li>
-                    <li><a href="payment.html">Payment</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="contacts.html">Contacts</a></li>
+
+                    <li <?php if(($_SERVER['REQUEST_URI'] == '/BookStore_Online/home.html') || ($_SERVER['REQUEST_URI'] == '/BookStore_Online/')) echo "class='hover'"?>><a href="home.html">Home</a></li>
+                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/products.html') echo "class='hover'"?>><a href="products.html">Products</a></li>
+					<li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/book1.html') echo "class='hover'"?>><a href="book1.html">Books 1$</a></li>
+                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/payment.html') echo "class='hover'"?>><a href="payment.html">Payment</a></li>
+                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/support.html') echo "class='hover'"?>><a href="#">Support</a></li>
+                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/contacts.html') echo "class='hover'"?>><a href="contacts.html">Contacts</a></li>
                 </ul>
                 <script type="text/javascript">
-                    $(document).ready(function(){
-                        $("li").click(function(){
-                            $(this).addClass("hover").siblings().removeClass("hover");
+//                    $(document).ready(function(){
+//                    	var url = window.location.href;
+                    	//var url1 = document.write(url.slice(0));
+                    	//alert(url);
+//                      	alert(url);
+                    	//$('a[href="products.html"]').parent().addClass("hover");
+//                         $("li").click(function(){ 	
+//                             $("li.hover").removeClass("hover");
+//                             $(this).addClass("hover");
 
-                        })
+//                         })
                     })
                 </script>
             </div><!--.box-->
@@ -90,57 +96,24 @@
     <div class="footer">
         <div class="main_footer">
             <div class="box">
-               <div class="col" id="col1">
-                   <h4>Question Common</h4>
-                   <ul>
-                       <li><a href="<?php echo ROOTHOST;?>index.php?com=contents&id=1">General</a><span class="border"></span></li>
-                       <li><a href="#">Diaries, Letters & Journals</a><span class="border"></span></li>
-                       <li><a href="#">Memoirs</a><span class="border"></span></li>
-                       <li><a href="#">True Stories</a><span class="border"></span></li>
-                       <li><a href="#">Generic Exams</a><span class="border"></span></li>
-                       <li><a href="#">GK Titles</a><span class="border"></span></li>
-                       <li><a href="#">Medical Entrance</a><span class="border"></span></li>
-                       <li><a href="#">Other Entrance Exams</a><span class="border"></span></li>
-                       <li><a href="#">PG Entrance Examinations</a><span class="border"></span></li>
-                       <li><a href="#">Self-help Titles</a><span class="border"></span></li>
-                       <li><a href="#">Sociology</a></li>
-                   </ul>
+               <?php 
+					require_once ('libs/cls.contents.php');
+					$objcontents = new CLS_CONTENTS;
+					for ($i=1;$i<=3;$i++){
+					$objcontents=new CLS_CONTENTS();
+					?>
+				<div class='col' id='col<?php echo $i; ?>'>
+						<h4><a href="<?php echo ROOTHOST;?>index.php?com=contents&&viewtype=block&id=<?php echo $i?>"><?php echo $objcontents->getNameCat($i); ?></a></h4>
+						<ul>
+							<?php
+							$objcontents->getList(' AND `cat_id` ='.$i,"",' LIMIT 0,7');
+							while($row=$objcontents->Fetch_Assoc()){
+							?>                   
+								<li><a href="<?php echo ROOTHOST;?>index.php?com=contents&&viewtype=detail&id=<?php echo $row['con_id']?>"><?php echo $row['title'];?></a><span class="border"></span></li>
+				   <?php }?>
+				   </ul>
                </div><!--.col-->
-               <div class="col" id="col2">
-                    <h4>Policy BookStore</h4>
-                    <ul>
-                        <li><a href="#">Academic and Referencel</a><span class="border"></span></li>
-                        <li><a href="#">Business Trade</a><span class="border"></span></li>
-                        <li><a href="#"> Engineering and Computer Science</a><span class="border"></span></li>
-                        <li><a href="#">Humanities, Social Sciences and Languages</a><span class="border"></span></li>
-                        <li><a href="#">Introduction to Computers</a><span class="border"></span></li>
-                        <li><a href="#">Science and Maths</a><span class="border"></span></li>
-                        <li><a href="#">Trade Business</a><span class="border"></span></li>
-                        <li><a href="#"> English Language & Literature</a><span class="border"></span></li>
-                        <li><a href="#"> English Language Teaching</a><span class="border"></span></li>
-                        <li><a href="#">Environment Awareness</a><span class="border"></span></li>
-                        <li><a href="#">Environment Protection</a></li>
-                    </ul>
-
-               </div><!--.col-->
-                <div class="col" id="col3">
-                    <h4>Handbook </h4>
-                    <ul>
-                        <li><a href="#">Earth Sciences</a><span class="border"></span></li>
-                        <li><a href="#">Geography</a><span class="border"></span></li>
-                        <li><a href="#">The Environment</a><span class="border"></span></li>
-                        <li><a href="#">Regional & Area Planning</a><span class="border"></span></li>
-                        <li><a href="#">Fantasy</a><span class="border"></span></li>
-                        <li><a href="#">Gay</a><span class="border"></span></li>
-                        <li><a href="#">Humorous</a><span class="border"></span></li>
-                        <li><a href="#">Interactive</a><span class="border"></span></li>
-                        <li><a href="#">Legal</a><span class="border"></span></li>
-                        <li><a href="#">Lesbian</a><span class="border"></span></li>
-                        <li><a href="#">Men'S Adventure</a></li>
-                    </ul>
-
-
-                </div><!--.col-->
+			   <?php } ?>
                 <div class="col" id="col4">
                     <h4 title="Bài vi?t m?i nh?t">Sharing On Social</h4>
 					<div class="fb-like-box" data-href="https://www.facebook.com/thietkeweb.igf" data-width="200" data-show-faces="true" data-stream="false" data-show-border="true" data-header="false"></div>

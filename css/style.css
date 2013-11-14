@@ -176,6 +176,11 @@ a {text-decoration:  none; color: #555454; }
 .check_out .check_out_button input[type="submit"]{font-family: "SegoeWP Bold";border: none; display: inline-block; width: 98px; height: 38px; background: url("../images/btn_submit.png") no-repeat; cursor: pointer; color: #555454;}
 .check_out .check_out_button a {font-weight: bold;display: inline-block; width: 98px; height: 38px; background: url("../images/btn_submit.png") no-repeat; line-height: 38px;}
 
+/**************Content_page****************/
+#content_page {width:200px; overflow: hidden; margin-left:auto; margin-right:auto; border:1px solid #dedede;}
+#content_page p{color:#red}
+
+
 /******************Contact_page****************/
 .contact_page {width: 90%; overflow: hidden; margin-left:auto; margin-right:auto;}
 .contact_page p{color:#7e7e7e; font-size:16px; text-align:justify;}
@@ -223,17 +228,14 @@ a {text-decoration:  none; color: #555454; }
 .footer {overflow: hidden; clear: both;}
 .main_footer {background: url("../images/bg_footer.png"); height:  335px; padding-top: 20px; }
 .main_footer .box {width: 998px; margin:  auto; overflow: hidden;}
-.main_footer .box .col {float: left; /*padding-right: 20px; */}
+.main_footer .box .col {float: left; width: 265px;}
+.main_footer .box #col4 {float: right; width: 200px;}
 .main_footer .box .col h4 {font-size: 20px; font-family: "SegoeWP Light"; color: #dddddd; margin-bottom: 15px;}
 .main_footer .box .col li { /*border-bottom: 1px solid #565757;*/   }
 /*.main_footer .box .col li:last-child {border-bottom:  none;}*/
 .main_footer .box .col a {font-size: 14px; font-family: "SegoeWP Light"; color:  #ddd; display: block; height:  24px; line-height:  24px;}
 .main_footer .box .col .border {border-bottom: 1px solid #565757; width: 173px; display: block;}
 
-.main_footer .box #col1  {width: 246px; }
-.main_footer .box #col2 {width: 298px; }
-.main_footer .box #col3 {width: 248px; }
-.main_footer .box #col4 {width: 200px;}
 
 /***********footer_info***********/
 .footer_info {clear: both;background: url("../images/bg_footer_info.png"); height:  121px;font-size:  20px; font-family: "SegoeWP Light"; color: #dddddd; text-align:  center; padding-top: 25px;}

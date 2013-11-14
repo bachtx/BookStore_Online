@@ -19,21 +19,13 @@ $row=$obj->Fetch_Assoc();
 	      <input type="hidden" name="txtid" id="txtid" value="<?php echo $row['gmem_id'];?>"></td>
       </tr>
       <tr>
-        <td align="right" bgcolor="#EEEEEE"><strong>Par_id&nbsp;</strong></td>
-        <td>
-            <select name="cbo_cate" id="cbo_cate">
-              <option value="0" selected="selected"  style="background-color:#eeeeee; font-weight:bold">
-              <?php echo "Root";?></option>
-               <?php
-                if(!isset($objCata))
-                $objCata=new CLS_GROUP();
-                $obj->ListCategory($id,$row['par_id'],0,1);
-               ?>
-            </select></td>
-      </tr>
-      <tr>
       	<td align="right" bgcolor="#EEEEEE"><strong>Level</strong></td>
-      	<td><input type="text" name="isadmin" value="<?php echo $row['isadmin']?>"/></td>
+      	<td>
+	      	<select name="isadmin">
+	      		<option value="Admin" <?php if($row['isadmin'] == "Admin") echo "selected='selected'"?>>Admin</option>
+	      		<option value="Mod" <?php if($row['isadmin'] == "Mod") echo "selected='selected'"?>>Mod</option>
+	      	</select>
+      	</td>
       </tr>
       <tr>
         <td align="right" bgcolor="#EEEEEE"><strong>Public &nbsp;</strong></td>
