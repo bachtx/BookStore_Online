@@ -11,7 +11,8 @@
 		$title_manager = $objlang->MANAGER_ADD;
 	if(isset($_GET['task']) && $_GET['task']=='edit')
 		$title_manager = $objlang->MANAGER_EDIT;
-		
+
+	$task='';
 	require_once('includes/toolbar.php');
 	// End toolbar
 ?>
@@ -19,12 +20,12 @@
 	$obj=new CLS_GROUP();
 	if(isset($_POST['cmdsave']))
 	{
-		$obj->ParID=(int)$_POST['cbo_cate'];
+		//$obj->ParID=(int)$_POST['cbo_cate'];
 		$obj->Name=addslashes($_POST['txtname']);
 		
 		$sContent=addslashes($_POST['txt_metadesc']);
 		$obj->Intro=encodeHTML($sContent);
-		$obj->isAdmin = (int)$_POST['isadmin'];
+		$obj->isAdmin = $_POST['isadmin'];
 		$obj->isActive=(int)$_POST['optactive'];
 		if(isset($_POST['txtid'])){
 			$obj->ID=(int)$_POST['txtid'];

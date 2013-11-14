@@ -5,17 +5,19 @@ define('COMS','users');
 require_once(libs_path.'cls.users.php');
 require_once(libs_path.'cls.guser.php');
 
-$title_manager = 'Quản lý người dùng';
+$title_manager = 'Quáº£n lÃ½ ngÆ°á»�i dÃ¹ng';
 if(isset($_GET['task']) && $_GET['task']=='add')
-	$title_manager = 'Thêm mới người dùng';
+	$title_manager = 'ThÃªm má»›i ngÆ°á»�i dÃ¹ng';
 if(isset($_GET['task']) && $_GET['task']=='edit')
-	$title_manager = 'Sửa thông tin người dùng';
+	$title_manager = 'Sá»­a thÃ´ng tin ngÆ°á»�i dÃ¹ng';
 if(isset($_GET['task']) && $_GET['task']=='changepass')
-	$title_manager = 'Đổi mật khẩu';	
+	$title_manager = 'Ä�á»•i máº­t kháº©u';	
 
 if(!isset($objmem)) $objmem = new CLS_USERS();
 
-require_once('includes/toolbar.php');
+	require_once('includes/toolbar.php');
+
+
 // End toolbar
 
 if(!isset($obj)) $obj =new CLS_USERS();
@@ -63,6 +65,7 @@ if(isset($_POST['cmdsave'])){
 }
 
 define('THIS_COM_PATH',COM_PATH.'com_'.COMS.'/');
+$task = '';
 if(isset($_GET['task']))
 	$task=$_GET['task'];
 if(!is_file(THIS_COM_PATH.'task/'.$task.'.php'))

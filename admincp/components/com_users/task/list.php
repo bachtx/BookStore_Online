@@ -60,14 +60,14 @@
     <table width="100%" border="0" cellspacing="1" cellpadding="5" class="list">
       <tr class="header">
         <td width="30" align="center"><input type="checkbox" name="chkall" id="chkall" value="" onclick="docheckall('chk',this.checked);" /></td>
-        <td align="center">Tên đăng nhập</td>
-        <td align="center">Tên</td>
+        <td align="center">Username</td>
+        <td align="center">Full Name</td>
         <td align="center">Email</td>
+        <td align="center">Change password</td>
         <?php 
 	    if($obj->isAdmin()==true) {
 		?>
-        <td align="center">Đổi mật khẩu</td>
-        <td width="75" align="center">Nhóm Quyền</td>
+        <td width="75" align="center">Level</td>
         <td width="50" align="center"><?php echo 'ACTIVE';?></td>
         <td width="50" align="center"><?php echo 'EDIT';?></td>
         <td width="50" align="center"><?php echo 'DELETE';?></td>
@@ -80,7 +80,7 @@
 		$id=$rows["mem_id"];
 		$username=$rows["username"];
 		$name=$rows["firstname"]." ".$rows["lastname"];
-		$gender=($rows["gender"]==0)?'Nam':'Ná»¯';
+		$gender=($rows["gender"]==0)?'Nam':'NÃ¡Â»Â¯';
 		
 		$objmem = new CLS_GUSER();
 		$objmem->getList(" WHERE gmem_id='".$rows["gmem_id"]."' ",''); 
@@ -95,8 +95,9 @@
 		echo "<td width='100'><a href='index.php?com=".COMS."&amp;task=edit&amp;id=$id'>$username</a></td>";
 		echo "<td nowrap='nowrap'><a href='index.php?com=".COMS."&amp;task=edit&amp;id=$id'>$name</a></td>";
 		echo "<td nowrap='nowrap'>$email</td>";
+		echo "<td align='center'><a href='index.php?com=".COMS."&amp;task=changepass&amp;id=$id'>Change pass</a></td>";
 		if($UserLogin->isAdmin()==true) {
-			echo "<td align='center'><a href='index.php?com=".COMS."&amp;task=changepass&amp;id=$id'>Change pass</a></td>";
+			
 			echo "<td nowrap='nowrap'>$gmember</td>";
 			echo "<td width='50' align='center'>";
 				echo "<a href='index.php?com=".COMS."&amp;task=active&amp;id=$id'>";

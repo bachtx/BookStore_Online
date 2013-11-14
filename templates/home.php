@@ -77,19 +77,25 @@
         <div class="nav_menu">
             <div class="box">
                 <ul>
-                    <li class="hover"><a href="home.html">Home</a></li>
-                    <li ><a href="products.html">Products</a></li>
-					<li ><a href="book1.html">Books 1$</a></li>
-                    <li><a href="payment.html">Payment</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="contacts.html">Contacts</a></li>
+                    <li <?php if(($_SERVER['REQUEST_URI'] == '/BookStore_Online/home.html') || ($_SERVER['REQUEST_URI'] == '/BookStore_Online/')) echo "class='hover'"?>><a href="home.html">Home</a></li>
+                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/products.html') echo "class='hover'"?>><a href="products.html">Products</a></li>
+					<li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/book1.html') echo "class='hover'"?>><a href="book1.html">Books 1$</a></li>
+                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/payment.html') echo "class='hover'"?>><a href="payment.html">Payment</a></li>
+                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/support.html') echo "class='hover'"?>><a href="#">Support</a></li>
+                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/contacts.html') echo "class='hover'"?>><a href="contacts.html">Contacts</a></li>
                 </ul>
                 <script type="text/javascript">
-                    $(document).ready(function(){
-                        $("li").click(function(){
-                            $(this).addClass("hover").siblings().removeClass("hover");
+//                    $(document).ready(function(){
+//                    	var url = window.location.href;
+                    	//var url1 = document.write(url.slice(0));
+                    	//alert(url);
+//                      	alert(url);
+                    	//$('a[href="products.html"]').parent().addClass("hover");
+//                         $("li").click(function(){ 	
+//                             $("li.hover").removeClass("hover");
+//                             $(this).addClass("hover");
 
-                        })
+//                         })
                     })
                 </script>
             </div><!--.box-->

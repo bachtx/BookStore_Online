@@ -13,24 +13,15 @@
           <label class="txtname_err check_error"></label>          
 		</td>
       </tr>
-      <tr>
-        <td align="right" bgcolor="#EEEEEE"><strong>Par_id:&nbsp;</strong></td>
-        <td>
-            <select name="cbo_cate" id="cbo_cate">
-              <option value="0" selected="selected">Root</option>
-               <?php
-                if(!isset($objCata))
-                $objCata=new CLS_GROUP();
-                $objCata->ListCategory(0,0,0,1);
-               ?>
-              <script language="javascript">
-			  cbo_Selected('cbo_cate','<?php echo $objcate->ParID;?>');
-			  </script>
-            </select></td>
-      </tr>
+      
       <tr>
       	<td align="right" bgcolor="#EEEEEE"><strong>Level</strong></td>
-      	<td><input type="text" name="isadmin" value=""/></td>
+      	<td>
+      	<select name="isadmin">
+      		<option value="Admin">Admin</option>
+      		<option value="Mod">Mod</option>
+      	</select>
+      	</td>
       </tr>
       <tr>
         <td align="right" bgcolor="#EEEEEE"><strong>Public:&nbsp;</strong></td>
