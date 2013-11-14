@@ -20,7 +20,7 @@ if(isset($_GET['id']))
 </div><!--detail_jumlink-->
 <div class="feature">
 	<img src="<?php echo $row['thumb']?>" width="252" height="393" alt="feature"/>
-	<h2><?php echo $row['name'];?></h2>
+	<h2><?php echo Substring($row['name'],0,4);?></h2>
 	<p>
 		<?php echo $row['intro'];?>
 	</p>
