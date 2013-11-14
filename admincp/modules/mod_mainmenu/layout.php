@@ -3,6 +3,8 @@
 		if($UserLogin->isLogin()==true){
 		if($UserLogin->isAdmin() == TRUE){
 	?>
+
+
 <ul>
     <li>
         <a href="index.php" class="active"><span>Systems</span></a>

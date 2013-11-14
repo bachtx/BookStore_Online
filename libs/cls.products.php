@@ -47,7 +47,7 @@ class CLS_PRODUCTS{
 					echo "<span class=\"off\">$persen%</span>";
 					echo $imgtag;
 				?>
-				<p><a href="index.php?com=products&&viewtype=detail&&id=<?php echo $pro_id;?>" class="name_product"/><?php echo $name;?></a></p>
+				<p><a href="<?php echo ROOTHOST.$name."-".$pro_id.".html";?>" class="name_product"/><?php echo $name;?></a></p>
 				<h4><?php echo $cur_price;?>$</h4>
 			</div><!--.div_product-->	
 		<?php

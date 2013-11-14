@@ -13,3 +13,6 @@ RewriteRule ^shopcart.html index.php?com=order&viewtype=cart
 RewriteRule ^order.html index.php?com=order&viewtype=order
 RewriteRule ^support.html index.php?com=contents&viewtype=block
 RewriteRule ^(.*)-cat([0-9]*).html index.php?com=products&viewtype=block&cat_id=$2
+RewriteRule ^(.*)-([0-9]*).html index.php?com=products&viewtype=detail&id=$2
+RewriteRule ^(.*)-bv([0-9]*).html index.php?com=contents&viewtype=detail&id=$2
+RewriteRule ^(.*)-gr([0-9]*).html index.php?com=contents&viewtype=block&id=$2
