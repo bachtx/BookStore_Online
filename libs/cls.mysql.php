@@ -8,7 +8,7 @@ class CLS_MYSQL{
 	private $rs;
 	private $lastid;
 	public function CLS_MYSQL(){
-		// set value
+		// set valueuhm
 		$this->HOSTNAME=HOSTNAME;
 		$this->USERNAME=DB_USERNAME;
 		$this->PASSWORD=DB_PASSWORD;

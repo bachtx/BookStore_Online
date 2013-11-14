@@ -32,7 +32,7 @@ if(isset($_GET['id']))
 				$obj->getPrice($pro_id);
 			?> 
 		</p>
-		<a href="#" class="btn_cart">Add to cart</a>
+		<a href="#" class="btn_cart" pro_id='<?php echo $pro_id;?>'>Add to cart</a>
 		<div class="paypal">
 			<p class="lock">Safe, Secure Shopping</p>
 			<a href="#"><img src="images/paypal.png" alt="paypal"/> </a>
@@ -71,7 +71,7 @@ if(isset($_GET['id']))
 			<fieldset>
 				<legend>Write a comment</legend>
 				<input type="hidden" name="id" value="<?php echo $pro_id;?>" />
-				<input type="hidden" name="link" value="?com=products&&viewtype=detail&&id=<?php echo $pro_id;?>">
+				<input type="hidden" name="link" value="<?php echo ROOTHOST;?>index.php?com=products&&viewtype=detail&&id=<?php echo $pro_id;?>">
 				<p>
 					<label>Your name</label>
 					<input type="text" name="name" />
@@ -107,8 +107,8 @@ if(isset($_GET['id']))
 			var proid= $(this).attr('pro_id');
 			$.post('ajaxs/addcart.php',{'proid':proid},function(data){
 			alert(data);
-				//alert('Add Cart Sucess !');
-				//window:location="index.php?com=products&&viewtype=detail&&id="+proid;
+			//alert('Add Cart Sucess !');
+			//	window:location="index.php?com=products&&viewtype=detail&&id="+proid;
 			})
 		})
 	})
