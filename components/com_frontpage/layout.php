@@ -63,25 +63,9 @@
 						<div class="pagin"><?php paging_index($total_rows,MAX_ITEM,$cur_page); ?></div>
 					<?php } ?>					
 			</div>
-			<div id="tabs-2">
-				<?php								
-				$product->getList("");					
-				$total_rows=$product->Num_rows();	
-					if($total_rows>0){
-						$max_page=ceil($total_rows/MAX_ITEM);
-						if($cur_page>=$max_page){
-							$cur_page=$max_page;
-							$_SESSION["CUR_PAGE_PRO"]=$cur_page;
-						}
-						$start_r=($cur_page-1)*MAX_ITEM;
-						$product->getListPro(" AND `old_price`>0"," ORDER BY cur_price/old_price"," LIMIT $start_r,".MAX_ITEM);
-						//$//product->getListPro(" "," ORDER BY `cdate` DESC"," LIMIT $start_r,".MAX_ITEM);?>
-						<div class="pagin"><?php paging_index($total_rows,MAX_ITEM,$cur_page); ?></div>
-					<?php } ?>		
-			
-			
+			<div id="tabs-2">										
 				<?php
-					//$product->getListPro(' AND `old_price`>0',' ORDER BY cur_price/old_price',' LIMIT 15');
+					$product->getListPro(' AND `old_price`>0',' ORDER BY cur_price/old_price',' LIMIT 15');
 				?>
 			</div>
 			<div id="tabs-3">

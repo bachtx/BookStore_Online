@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,13 +44,12 @@
                 <div class="cart">
                     <div class="col1">
 						<?php 
-							$count=0;$total=0; 
-							$objmysql= new CLS_MYSQL();
+							$count=0;
 							if(isset($_SESSION['CART']))
 								$count=count($_SESSION['CART']);														
 						?>
                         <p class="y_cart"><span class="your_cart">Your cart</span> (<?php echo $count;?> items)</p>
-                        <p><a href="<?php echo ROOTHOST;?>index.php?com=products&&viewtype=cart" class="checkout" style="margin-left:88px;">Checkout</a></p>
+                        <p><a href="<?php echo ROOTHOST;?>shopcart.html" class="checkout" style="margin-left:88px;">Checkout</a></p>
                     </div><!--.col1-->
                     <div class="col2">
                         <img src="images/star.png" alt="star"/>

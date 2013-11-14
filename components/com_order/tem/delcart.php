@@ -14,5 +14,5 @@ if(isset($_SESSION['CART'])):
 endif;
 ?>
 <script type='text/javascript'>
-window.location.href="index.php?com=products&&viewtype=cart";
+window.location.href="shopcart.html";
 </script>

@@ -12,6 +12,12 @@ class CLS_PRODUCTS{
 		$sql="SELECT * FROM `tbl_products` WHERE isactive=1 ".$where;
 		return $this->objmysql->Query($sql);
 	}
+	public function getPriceById($Pro_id){
+		$sql="SELECT `cur_price` FROM `tbl_products` WHERE pro_id=$Pro_id ";
+		$this->objmysql->Query($sql);
+		$row=$this->objmysql->Fetch_Assoc();
+		return $row['cur_price'];
+	}
 	public function GetListPro($where=' ',$order=' ORDER BY RAND() ',$limit=' '){
 		$sql="SELECT * FROM `tbl_products` WHERE isactive=1 ".$where.$order.$limit;
 		//echo $sql;

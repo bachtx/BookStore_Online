@@ -277,3 +277,27 @@ a {text-decoration:  none; color: #555454; }
 .info_deal .pri{color:#ffffff;font-size:28px;margin-top:-5px;}
 .info_deal .save{font-size:22px;color:#f3f3f3}
 .info_deal a{padding:2px 20px;height:30px;line-height:30px;background:#5dbb5d;border-radius:5px;color:#fff;font-size:18px;}
+/** Cart*/
+table.list tr th{
+    background-color: #CCCCCC;
+    font-weight: bold;
+    height: 29px;
+}
+table.list tr td, table.list tr th {
+    border-bottom: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    height: 25px;
+    overflow: hidden;
+}
+table td, table th {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+}
+.action{clear:both;height:30px;margin:20px 0px 20px 0px;}
+.info_order h3{font-size: 16px;text-align: center;}
+.action input,#cmd_order,#cmd_back,#cmd_confirm,#cmd_reset{
+    width:100px;
+    background: #DEE5E8;color:#555454;cursor: pointer;
+    border:1px solid #ccc;padding: 3px 0px;
+}
+table.list td img{margin:5px;}

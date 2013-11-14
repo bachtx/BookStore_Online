@@ -17,6 +17,10 @@ RewriteRule ^payment.html index.php?com=payment
 RewriteRule ^products.html index.php?com=products&viewtype=random
 RewriteRule ^book1.html index.php?com=products&viewtype=book1
 RewriteRule ^search.html index.php?com=products&viewtype=search
+RewriteRule ^shopcart.html index.php?com=order&viewtype=cart
+RewriteRule ^order.html index.php?com=order&viewtype=order
+RewriteRule ^(.*)-cat([0-9]*).html index.php?com=products&&viewtype=block&cat_id=$1
+
 
 RewriteRule  ^(.*)-np([0-9]*)(.*).html index.php?com=products&cur_menu=25
 RewriteRule ^dat-hang(.*).html index.php?com=members&viewtype=order&scode=$1

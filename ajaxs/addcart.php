@@ -31,5 +31,9 @@ function check_exit($procode){
 	}
 	return false;
 }
-print_r($_SESSION['CART']);
+for($i=0;$i<count($_SESSION['CART']);$i++){
+	$_COOKIE['CART'][$i]=$_SESSION['CART'][$i];
+}
+print_r($_COOKIE['CART']);
+echo count($_COOKIE['CART']);
 ?>
