@@ -30,6 +30,9 @@ if(isset($_POST['update_car'])){ //update
 		<div id="tabs_products">
 			<h3><?php echo 'Cart';?></h3>
 			<div id="tabs-1">
+            <?php
+            if(isset($_SESSION['CART']) && count($_SESSION['CART'])>0){
+            ?>
 				<form method='POST' action='' id='frm_cart'>
     				<table width='100%' class='list' cellspacing="0" cellpadding='3'>
     					<tr>
@@ -77,6 +80,9 @@ if(isset($_POST['update_car'])){ //update
     				</div>									
 				</form>			
 			</div>
+            <?php }else
+                echo "ShopCart is Empty !!!"
+            ?>
 		</div><!--.tabs_product-->
 	</div><!--.primary-->
 </div><!--.main_wrapp-->
