@@ -47,4 +47,4 @@ $total_rows="0";
 			</div>
 		</div><!--.tabs_product-->
 	</div><!--.primary-->
-</div><!--.main_wrapp-->
+</div>
