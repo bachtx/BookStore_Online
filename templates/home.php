@@ -28,12 +28,9 @@
     <div class="header">
         <div class="top">
             <div class="box">
-                <ul>
-                    <li><a href="#">Sign in</a></li>
-                    <li><a href="#">My Account</a></li>
-                    <li><a href="#">Order Status</a></li>
-                    <li><a href="#">Help</a></li>
-                </ul>
+                 <marquee align="center" direction="left" height="28" scrollamount="4" width="100%" behavior="alternate">
+                    <span style="color: #fff; font-size: 15px;line-height:30px; font-weight: bold;">Hello Welcome to Website</span>
+                </marquee>
             </div><!--.box-->
         </div><!--.top-->
         <div class="main_header">
@@ -48,19 +45,11 @@
 						<?php 
 							$count=0;$total=0; 
 							$objmysql= new CLS_MYSQL();
-							if(isset($_SESSION['CART'])){
-								$count=count($_SESSION['CART']);
-								/*for($i=0;$i<$count;$i++)
-									$proid=$_SESSION['CART'][$i]['proid'];
-									$sql="SELECT `pro_id`,`name`,`thumb`,`cur_price`  FROM tbl_products WHERE `pro_id`='$proid'";
-									$objmysql->Query($sql);	
-									$row=$objmysql->Fetch_Assoc();
-									$amount=$row['cur_price']*$_SESSION['CART'][$i]['proid'];				
-									$total+=$amount;*/
-							}
+							if(isset($_SESSION['CART']))
+								$count=count($_SESSION['CART']);														
 						?>
                         <p class="y_cart"><span class="your_cart">Your cart</span> (<?php echo $count;?> items)</p>
-                        <p><span class="price">$<?php echo $total.'.0';?></span> <a href="<?php echo ROOTHOST;?>index.php?com=products&&viewtype=cart" class="checkout">Checkout</a></p>
+                        <p><a href="<?php echo ROOTHOST;?>index.php?com=products&&viewtype=cart" class="checkout" style="margin-left:88px;">Checkout</a></p>
                     </div><!--.col1-->
                     <div class="col2">
                         <img src="images/star.png" alt="star"/>
@@ -73,19 +62,26 @@
         <div class="nav_menu">
             <div class="box">
                 <ul>
-                    <li class="hover"><a href="home.html">Home</a></li>
-                    <li ><a href="products.html">Products</a></li>
-					<li ><a href="book1.html">Books 1$</a></li>
-                    <li><a href="payment.html">Payment</a></li>
-                    <li><a href="support.html">Support</a></li>
-                    <li><a href="contacts.html">Contacts</a></li>
+
+                    <li <?php if(($_SERVER['REQUEST_URI'] == '/BookStore_Online/home.html') || ($_SERVER['REQUEST_URI'] == '/BookStore_Online/')) echo "class='hover'"?>><a href="home.html">Home</a></li>
+                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/products.html') echo "class='hover'"?>><a href="products.html">Products</a></li>
+					<li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/book1.html') echo "class='hover'"?>><a href="book1.html">Books 1$</a></li>
+                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/payment.html') echo "class='hover'"?>><a href="payment.html">Payment</a></li>
+                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/support.html') echo "class='hover'"?>><a href="#">Support</a></li>
+                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/contacts.html') echo "class='hover'"?>><a href="contacts.html">Contacts</a></li>
                 </ul>
                 <script type="text/javascript">
-                    $(document).ready(function(){
-                        $("li").click(function(){
-                            $(this).addClass("hover").siblings().removeClass("hover");
+//                    $(document).ready(function(){
+//                    	var url = window.location.href;
+                    	//var url1 = document.write(url.slice(0));
+                    	//alert(url);
+//                      	alert(url);
+                    	//$('a[href="products.html"]').parent().addClass("hover");
+//                         $("li").click(function(){ 	
+//                             $("li.hover").removeClass("hover");
+//                             $(this).addClass("hover");
 
-                        })
+//                         })
                     })
                 </script>
             </div><!--.box-->

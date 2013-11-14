@@ -40,15 +40,15 @@
 	<?php if($obj->isAdmin()==true) { ?>
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="Header_list">
       <tr>
-        <td><?php echo SEARCH;?>:
+        <td><?php echo 'SEARCH';?>:
             <input type="text" name="txtkeyword" id="txtkeyword" value="<?php echo $keyword;?>" onfocus="onsearch(this,1);" onblur="onsearch(this,0)" />
-            <input type="submit" name="button" id="button" value="<?php echo SEARCH;?>" class="button" />
+            <input type="submit" name="button" id="button" value="<?php echo 'SEARCH';?>" class="button" />
         </td>
         <td align="right">
           <select name="cbo_active" id="cbo_active" onchange="document.frm_list.submit();">
-            <option value="all"><?php echo MALL;?></option>
-            <option value="1"><?php echo MPUBLISH;?></option>
-            <option value="0"><?php echo MUNPUBLISH;?></option>
+            <option value="all"><?php echo 'ALL';?></option>
+            <option value="1"><?php echo 'PUBLISH';?></option>
+            <option value="0"><?php echo 'UNPUBLISH';?></option>
             <script language="javascript">
 			cbo_Selected('cbo_active','<?php echo $action;?>');
             </script>
@@ -60,17 +60,17 @@
     <table width="100%" border="0" cellspacing="1" cellpadding="5" class="list">
       <tr class="header">
         <td width="30" align="center"><input type="checkbox" name="chkall" id="chkall" value="" onclick="docheckall('chk',this.checked);" /></td>
-        <td align="center">Tên đăng nhập</td>
-        <td align="center">Tên</td>
+        <td align="center">Username</td>
+        <td align="center">Full Name</td>
         <td align="center">Email</td>
+        <td align="center">Change password</td>
         <?php 
 	    if($obj->isAdmin()==true) {
 		?>
-        <td align="center">Đổi mật khẩu</td>
-        <td width="75" align="center">Nhóm quyền</td>
-        <td width="50" align="center"><?php echo CACTIVE;?></td>
-        <td width="50" align="center"><?php echo CEDIT;?></td>
-        <td width="50" align="center"><?php echo CDELETE;?></td>
+        <td width="75" align="center">Level</td>
+        <td width="50" align="center"><?php echo 'ACTIVE';?></td>
+        <td width="50" align="center"><?php echo 'EDIT';?></td>
+        <td width="50" align="center"><?php echo 'DELETE';?></td>
         <?php } ?>
       </tr>
       <?php 
@@ -80,7 +80,7 @@
 		$id=$rows["mem_id"];
 		$username=$rows["username"];
 		$name=$rows["firstname"]." ".$rows["lastname"];
-		$gender=($rows["gender"]==0)?'Nam':'Nữ';
+		$gender=($rows["gender"]==0)?'Nam':'NÃ¡Â»Â¯';
 		
 		$objmem = new CLS_GUSER();
 		$objmem->getList(" WHERE gmem_id='".$rows["gmem_id"]."' ",''); 
@@ -95,8 +95,9 @@
 		echo "<td width='100'><a href='index.php?com=".COMS."&amp;task=edit&amp;id=$id'>$username</a></td>";
 		echo "<td nowrap='nowrap'><a href='index.php?com=".COMS."&amp;task=edit&amp;id=$id'>$name</a></td>";
 		echo "<td nowrap='nowrap'>$email</td>";
+		echo "<td align='center'><a href='index.php?com=".COMS."&amp;task=changepass&amp;id=$id'>Change pass</a></td>";
 		if($UserLogin->isAdmin()==true) {
-			echo "<td align='center'><a href='index.php?com=".COMS."&amp;task=changepass&amp;id=$id'>Đổi</a></td>";
+			
 			echo "<td nowrap='nowrap'>$gmember</td>";
 			echo "<td width='50' align='center'>";
 				echo "<a href='index.php?com=".COMS."&amp;task=active&amp;id=$id'>";
@@ -109,7 +110,7 @@
 				echo "</a>";			
 			echo "</td>";
 			echo "<td width='50' align='center'>";
-				echo "<a href='javascript:detele_field('index.php?com=".COMS."&amp;task=delete&amp;id=$id')'>";
+				echo "<a href='javascript:detele_field(\"index.php?com=".COMS."&amp;task=delete&amp;id=$id\")'>";
 				showIconFun('delete','');
 				echo "</a>";
 			echo "</td>";

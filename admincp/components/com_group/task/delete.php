@@ -3,6 +3,6 @@
 	$id='';
 	if(isset($_GET['id']))
 		$id=(int)$_GET['id'];
-	$obj->setActive($id);
+	$obj->Delete($id);
 	echo "<script language=\"javascript\">window.location='index.php?com=".COMS."'</script>";
 ?>

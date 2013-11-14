@@ -6,5 +6,5 @@
 	if($obj->isAdmin()==true) {
 		$obj->Delete($id);
 	}
-	header("location:index.php?com=".COMS);
+	echo "<script language=\"javascript\">window.location='index.php?com=".COMS."'</script>";
 ?>

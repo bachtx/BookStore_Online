@@ -13,8 +13,10 @@
         <td align="right">
         <ul>
         <?php 
+        if($_GET['com'] != 'group'){
 			$task='';
             if(!isset($_GET["task"])){
+			
         ?>
 			<li><a class="edit" href="index.php?com=<?php echo COMS;?>" title="Danh sÃ¡ch">List</a></li>
             <li><a class="publish" href="#" onclick="dosubmitAction('frm_menu','public');" title="public">Public</a> </li>
@@ -25,7 +27,7 @@
             <li><a class="save"  href="#" onclick="dosubmitAction('frm_action','save');" title="LÆ°u">Save</a></li>
             <li><a class="close"  href="index.php?com=<?php echo COMS;?>" title="Ä�Ã³ng">Close</a></li>
             <li><a class="help"  href="index.php?com=<?php echo COMS;?>&task=help" title="Help">Support</a></li>
-        <?php } ?>
+        <?php }} ?>
         </ul>
         </td>
       </tr>
