@@ -134,7 +134,7 @@ function checkField(field,name){
       field.focus();
    }
 }
-function checkEmail(email){
+function checkEmail1(email){
    re=/^(([a-zA-Z0-9])+\.?)*([a-zA-Z0-9])+@(([a-zA-Z0-9])+\.)+[a-zA-Z]{2,4}$/;
    if(!re.test(email.value)){return false;}
    return true;

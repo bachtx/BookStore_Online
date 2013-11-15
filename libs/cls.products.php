@@ -53,7 +53,6 @@ class CLS_PRODUCTS{
 		<?php
 		}
 	}
-	
 	public function Num_rows(){
 		return $this->objmysql->Num_rows();
 	}
@@ -96,11 +95,11 @@ class CLS_PRODUCTS{
 		?>
 		<div class="like_product">
 			<div class="item">
-				<a href="index.php?com=products&&viewtype=detail&&id=<?php echo $row['pro_id'];?>" class="img"><img src="<?php echo $row['thumb'];?>" alt="like product"/></a>
+				<a href="<?php echo ROOTHOST.$name."-".$row['pro_id'].".html";?>" class="img"><img src="<?php echo $row['thumb'];?>" alt="like product"/></a>
 				<div>
 					<h4><?php echo $name;?></h4>
 					<p class="like_price"><?php echo $row['cur_price']."$";?></p>
-					<a href="index.php?com=products&&viewtype=detail&&id=<?php echo $row['pro_id'];?>" class="read_more">Read more</a>
+					<a href="<?php echo ROOTHOST.$name."-".$row['pro_id'].".html";?>" class="read_more">Read more</a>
 				</div>
 			</div><!--.item-->
 		</div><!--like_product-->
@@ -170,7 +169,7 @@ class CLS_PRODUCTS{
 					echo "<span class=\"off\">$persen%</span>";
 					echo $imgtag;
 				?>
-				<p><a href="index.php?com=products&&viewtype=detail&&id=<?php echo $pro_id;?>"
+				<p><a href="<?php echo ROOTHOST.$name."-".$pro_id.".html";?>"
 				 class="name_product"/><?php echo $name;?></a></p>
 				<h4><?php echo $cur_price;?> $</h4>
 			</div><!--bookRef-->	

@@ -22,11 +22,6 @@ if(isset($_GET['cat_id'])){
 <div class="main_wrap">
 	<div class="sidebar">
 		<h3>Categories</h3>
-		<ul class="ul_all"  >
-			<li class="all"><a href="#" alt ="all">
-				ALL
-			</a></li>
-		</ul>
 		<!-- Lấy dữ liệu động từ cơ sở dữ liệu ra bên ngoài trang chính-->
 		<?php
 			$catalogs=new CLS_CATALOGS();

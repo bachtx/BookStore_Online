@@ -3,12 +3,7 @@
 </div><!--detail_jumlink-->
 <div class="main_wrap">
 	<div class="sidebar">
-		<h3>Categories</h3>
-		<ul class="ul_all"  >
-			<li class="all"><a href="#" alt ="all">
-				ALL
-			</a></li>
-		</ul>		
+		<h3>Categories</h3>		
 		<?php
 			$catalogs=new CLS_CATALOGS();
 			$catalogs->getListCatalogs();

@@ -77,7 +77,7 @@ class CLS_CONTENT
 				echo "<input type=\"checkbox\" name=\"chk\" id=\"chk\" 	 onclick=\"docheckonce('chk');\" value=\"$ids\" />";
 				echo "</label></td>";
 						echo "<td align='center'>$title</td>";
-						echo "<td align='center'><img src='".$rows['thumb']."' alt='".$rows['code']."' /></td>";
+						echo "<td align='center'><img src='".$rows['thumb']."' alt='".$rows['code']."' width='100' /></td>";
 						echo "<td align='center'>$category</td>";
 						echo "<td align='center'>$intro</td>";
 						echo "<td align='center'>".$rows['author']."</td>";
