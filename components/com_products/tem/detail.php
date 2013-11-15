@@ -67,25 +67,26 @@ if(isset($_GET['id']))
 		<?php
 			$obj->getComment($pro_id);
 		?>
-		<form action="index.php?com=products&&viewtype=comment" method="post">
+        <span class='star' style='display:block;color:red;' id='error'></span>
+		<form action="index.php?com=products&&viewtype=comment" method="post" name="frm_comment">
 			<fieldset>
 				<legend>Write a comment</legend>
 				<input type="hidden" name="id" value="<?php echo $pro_id;?>" />
 				<input type="hidden" name="link" value="<?php echo ROOTHOST;?>index.php?com=products&&viewtype=detail&&id=<?php echo $pro_id;?>">
 				<p>
 					<label>Your name</label>
-					<input type="text" name="name" />
+					<input type="text" name="name" class="c_name" />
 				</p>
 				<p>
 					<label>email </label>
-					<input type="text"  name="email"/>
+					<input type="text"  name="email" class="c_title"/>
 				</p>
 				<p>
 					<label>Message </label>
-					<textarea name="content"></textarea>
+					<textarea name="content" class="c_mes"></textarea>
 				</p>
 				<p>
-					<input type="submit" name="submit" value="Submit"/>
+					<input type="submit" name="submit" value="Send" onclick="return checkcomment();"/>
 
 				</p>
 			</fieldset>
@@ -106,11 +107,28 @@ if(isset($_GET['id']))
 		$('.btn_cart').click(function(){
 			var proid= $(this).attr('pro_id');
 			$.post('ajaxs/addcart.php',{'proid':proid},function(data){
-			//alert(data);
 				alert('Add Cart Sucess !');
 				window:location="index.php?com=products&&viewtype=detail&&id="+proid;
 			})
 		})
-	})
+	})   
+    function checkcomment(){ 
+    	var error=false;
+    	if($('.c_name').val()==''){
+    		error=true;
+    	}
+    	if($('.c_title').val()==''){
+    		error=true;
+    	}
+        if($('.c_mes').val()==''){
+    		error=true;    		
+    	}
+    	if(error){
+    		$('#error').show();
+    		$('#error').html('Có những trường yêu cầu chưa được điền, bạn hãy điền đầy đủ trước khi coment !');
+    		return false;
+    	}
+    	return true;
+    }
 </script>
 <!--.like-->

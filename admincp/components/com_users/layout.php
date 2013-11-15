@@ -5,13 +5,13 @@ define('COMS','users');
 require_once(libs_path.'cls.users.php');
 require_once(libs_path.'cls.guser.php');
 
-$title_manager = 'Quáº£n lÃ½ ngÆ°á»�i dÃ¹ng';
+$title_manager = 'Quản lí người dùng';
 if(isset($_GET['task']) && $_GET['task']=='add')
-	$title_manager = 'ThÃªm má»›i ngÆ°á»�i dÃ¹ng';
+	$title_manager = 'Thêm mới người dùng';
 if(isset($_GET['task']) && $_GET['task']=='edit')
-	$title_manager = 'Sá»­a thÃ´ng tin ngÆ°á»�i dÃ¹ng';
+	$title_manager = 'Sửa thông tin người dùng';
 if(isset($_GET['task']) && $_GET['task']=='changepass')
-	$title_manager = 'Ä�á»•i máº­t kháº©u';	
+	$title_manager = 'Đổi mật khâu người dùng';	
 
 if(!isset($objmem)) $objmem = new CLS_USERS();
 

@@ -123,9 +123,9 @@ $(document).ready(function() {
 			<td align="right" bgcolor="#EEEEEE"><strong>Quantity:</strong></td>
 			<td><input name="txt_quantity" type="text" value='<?php echo $row['quantity'];?>'/></td>
 			<td align="right" bgcolor="#EEEEEE"><strong>isActive</strong></td>
-			<td><input name="optactive" type="radio" value="1" <?php if($row['ishot']==1) echo 'checked';?>/>
+			<td><input name="optactive" type="radio" value="1" <?php if($row['isactive']==1) echo 'checked';?>/>
 			Yes
-			<input name="optactive" type="radio" value="0"  <?php if($row['ishot']==0) echo 'checked';?>/>
+			<input name="optactive" type="radio" value="0"  <?php if($row['isactive']==0) echo 'checked';?>/>
 			No</td>
        </tr>
        <tr>
