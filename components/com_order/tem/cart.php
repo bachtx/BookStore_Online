@@ -30,9 +30,6 @@ if(isset($_POST['update_car'])){ //update
 			if(isset($_SESSION['CART']) && count($_SESSION['CART'])>0) {
 			?>
 			<div id="tabs-1">
-            <?php
-            if(isset($_SESSION['CART']) && count($_SESSION['CART'])>0){
-            ?>
 				<form method='POST' action='' id='frm_cart'>
     				<table width='100%' class='list' cellspacing="0" cellpadding='3'>
     					<tr>
