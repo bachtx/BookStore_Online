@@ -1,3 +1,4 @@
+<?php ob_start();?>
 <div class="detail_jumlink">
 	<p>Home  <span class="bg_jumlink"></span>  <?php echo "Cart";?></p>
 </div><!--detail_jumlink-->
@@ -69,6 +70,7 @@ if(!isset($_POST['cmd_order'])){
 if(isset($_POST['cmd_confirm'])){
         if(isset($_SESSION['ORDER'])){
 			unset($_SESSION['ORDER']);
+			setcookie('CART',null,time()-1);
 		}
 		$_SESSION['ORDER']['NAME']=$_POST['txt_name'];
 		$_SESSION['ORDER']['PHONE']=$_POST['txt_tel'];
@@ -136,8 +138,8 @@ else if(isset($_POST['cmd_order']) && isset($_SESSION['CART'])&& isset($_SESSION
 	unset($_SESSION['CART']); unset($_SESSION['ORDER']);
 	?>
 	<div class='info_order'>
-    	<h3 align='center'>Bạn đã gửi đơn hàng thành công! Chúng tôi sẽ xác nhận lại thông tin đặt hàng sớm nhất!</h3>
-    	<h3 align='center'>Chúc bạn có một ngày thật nhiều niềm vui!</h3>
+    	<h3 align='center'>You have successfully ordered this cart. We will check and confirm your delivery at the soonest possible.</h3>
+    	<h3 align='center'>Thanks for your purchase.</h3>
     	<h4><a style='color:red;' href='<?php echo ROOTHOST;?>'>Click here!</a></h4>
 	</div>
 	<?php
@@ -169,7 +171,7 @@ else{ ?>
     		<h4 style="float: left;">1. <label><input type='radio' name='opt_ship' style="float: left;" id='opt_ship1' value='Giao sách tận nơi'/>Trasfer Taking Place</label></h4>
     		<table width="100%" id="address" style="display:none;">
     			<tr>
-    				<td>address<span class='star'>*</span>:<br/>
+    				<td>Address<span class='star'>*</span>:<br/>
     				<textarea rows='3' style='width:100%' name='txt_address' id='txt_address'></textarea></td>
     			</tr>
     		</table>
@@ -191,7 +193,7 @@ else{ ?>
     		</table>
     	</fieldset>
         <div style="clear: both;height: 10px;"></div>
-    	<input type='submit' name='cmd_confirm' id='cmd_confirm' value='Comfirm' onclick="return checkinput_order();"/>
+    	<input type='submit' name='cmd_confirm' id='cmd_confirm' value='Confirm' onclick="return checkinput_order();"/>
     	<input type='reset' name='cmd_reset' id='cmd_reset' value='Reset'/>
     	<input type='button' name='cmd_back' id='cmd_back' value='Back' onclick="window.history.go(-1);"/>
     	<br/>
@@ -208,19 +210,24 @@ $(document).ready(function(){
 });
 function checkinput_order(){
 	var error=false;
+	var err = [];
 	if($('#txt_name').val()==''){
 		error=true;
+		err[0]='<p>You did not entered your name.</p>';
 		$('#txt_name').css({'border':'1px solid #f00;'});
 	}
 	if($('#txt_tel').val()==''){
 		error=true;
+		err[1]='<p>You did not entered your phone number.</p>';
 		$('#txt_tel').css({'border':'1px solid #f00;'});
 	}
 	if(error){
 		$('#error').show();
-		$('#error').html('Có những trường yêu cầu chưa được điền, bạn hãy điền đầy đủ trước khi đặt hàng');
+		console.log(err);
+		$('#error').html(err);
 		return false;
 	}
 	return true;
 }
 </script>
+<?php ob_end_flush(); ?>

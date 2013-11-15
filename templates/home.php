@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -43,12 +43,19 @@
                 <div class="cart">
                     <div class="col1">
 						<?php 
-							$count=0;
-							if(isset($_SESSION['CART']))
-								$count=count($_SESSION['CART']);														
+							$count=0;$total=0; 
+							$objmysql= new CLS_MYSQL();
+							if(isset($_SESSION['CART'])) {
+								$count=count($_SESSION['CART']);
+							} else {
+								if (isset($_COOKIE['CART'])){
+									$_SESSION['CART']=unserialize($_COOKIE['CART']);
+									$count=count($_SESSION['CART']);
+								}
+							}
 						?>
                         <p class="y_cart"><span class="your_cart">Your cart</span> (<?php echo $count;?> items)</p>
-                        <p><a href="<?php echo ROOTHOST;?>shopcart.html" class="checkout" style="margin-left:88px;">Checkout</a></p>
+                        <p><a href="<?php echo ROOTHOST;?>index.php?com=order&viewtype=cart" class="checkout" style="margin-left:88px;">Checkout</a></p>
                     </div><!--.col1-->
                     <div class="col2">
                         <img src="images/star.png" alt="star"/>

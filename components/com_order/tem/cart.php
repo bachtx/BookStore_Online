@@ -1,10 +1,12 @@
 <?php
+if(isset($_COOKIE['CART'])){$SESSION['CART'] = unserialize($_COOKIE['CART']);}
 if(isset($_POST['update_car'])){ //update
 	$ids=$_POST['txt_id'];
 	$qua=$_POST['txt_quan'];
 	for($i=0;$i<count($ids);$i++){
 		$item=array('proid'=>$ids[$i],'quan'=>$qua[$i]);
 		$_SESSION['CART'][$i]=$item;
+		setcookie('CART',serialize($_SESSION['CART']),time()+3600);
 	}
 }
 ?>
@@ -29,6 +31,9 @@ if(isset($_POST['update_car'])){ //update
 	<div class="primary" id = "product_page">
 		<div id="tabs_products">
 			<h3><?php echo 'Cart';?></h3>
+			<?php
+			if(isset($_SESSION['CART']) && count($_SESSION['CART'])>0) {
+			?>
 			<div id="tabs-1">
 				<form method='POST' action='' id='frm_cart'>
     				<table width='100%' class='list' cellspacing="0" cellpadding='3'>
@@ -77,6 +82,9 @@ if(isset($_POST['update_car'])){ //update
     				</div>									
 				</form>			
 			</div>
+			<?php }
+				else {echo "<p style='text-align:center;font-size:18px;'>Your cart is empty! </p>";}
+			?>
 		</div><!--.tabs_product-->
 	</div><!--.primary-->
 </div><!--.main_wrapp-->

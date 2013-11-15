@@ -33,7 +33,7 @@ class CLS_ORDER{
 		$sql="INSERT INTO `tbl_order`(`cdate`,`cname`,`cphone`,`cemail`,`shiptype`,`add`,`payment`,`totalmoney`,`status`) VALUES (
 		'".$this->Cdate."','".$this->Cname."','".$this->Cphone."','".$this->Cemail."','".$this->ShipType."','".$this->Add."','".$this->Payment."','".$this->TotalMoney."','".$this->Status."')";
 		$this->objmysql->Exec('BEGIN');
-		//echo $sql;
+		//echo $sql;die();
 		$result=$this->objmysql->Exec($sql);
 		$order_id=$this->objmysql->LastInsertID();
 		$sql="INSERT INTO `tbl_order_detail`(`order_id`,`pro_id`,`quantity`,`price`) VALUES ";

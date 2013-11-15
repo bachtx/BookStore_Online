@@ -1,4 +1,5 @@
 <?php
+if(isset($_COOKIE['CART'])){$SESSION['CART'] = unserialize($_COOKIE['CART']);}
 if(isset($_SESSION['CART'])):
 	if(isset($_GET['proid'])){
 		$n=count($_SESSION['CART']);
@@ -11,6 +12,7 @@ if(isset($_SESSION['CART'])):
 		}
 		$_SESSION['CART']=$cart;
 	}
+	setcookie('CART',serialize($_SESSION['CART']),time()+3600);
 endif;
 ?>
 <script type='text/javascript'>

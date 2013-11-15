@@ -176,11 +176,6 @@ a {text-decoration:  none; color: #555454; }
 .check_out .check_out_button input[type="submit"]{font-family: "SegoeWP Bold";border: none; display: inline-block; width: 98px; height: 38px; background: url("../images/btn_submit.png") no-repeat; cursor: pointer; color: #555454;}
 .check_out .check_out_button a {font-weight: bold;display: inline-block; width: 98px; height: 38px; background: url("../images/btn_submit.png") no-repeat; line-height: 38px;}
 
-/**************Content_page****************/
-#content_page {width:200px; overflow: hidden; margin-left:auto; margin-right:auto; border:1px solid #dedede;}
-#content_page p{color:#red}
-
-
 /******************Contact_page****************/
 .contact_page {width: 90%; overflow: hidden; margin-left:auto; margin-right:auto;}
 .contact_page p{color:#7e7e7e; font-size:16px; text-align:justify;}
@@ -303,3 +298,22 @@ table td, table th {
     border:1px solid #ccc;padding: 3px 0px;
 }
 table.list td img{margin:5px;}
+
+/**************contents*******************/
+#contents_page {width:98%; overflow: hidden; margin-left:auto; margin-right:auto; border:none;}
+#contents_page h1{text-align:center;}
+#contents_page p{font-size:14px;}
+#contents_page p.title{font-weight:bold; text-align:right;color:#7e7e7e;}
+#contents_page p.intro{text-align:center;color:#7e7e7e;}
+
+#contents_page{width:100%;border:none;}
+.detail{border:1px solid #dedede; width:360px; height:180px; float:left; margin-left:15px; margin-top:10px;}
+.photo{float:left; width: 90px;margin-left:8px;}
+.info{float:right; width:260px;}
+.link{clear:both;}
+.summary{clear:both;width:320px;margin-left:auto;margin-right:auto;text-align:justify}
+.link {float:right; margin-right:30px;}
+.link p{font-size:18px;color:#7e7e7e;}
+#contents_page p{text-align:center;color:#7e7e7e;}
+#contents_page p.intro{ font-size:15px;}
+#contents_page h1,h2{text-align:center;}
