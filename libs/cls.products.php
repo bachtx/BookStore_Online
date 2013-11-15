@@ -44,7 +44,7 @@ class CLS_PRODUCTS{
 		?>
 			<div class="div_product">
 				<?php if($persen!=0)
-					echo "<span class=\"off\">$persen%</span>";
+					echo "<span class='off'>$persen%</span>";
 					echo $imgtag;
 				?>
 				<p><a href="<?php echo ROOTHOST.$name."-".$pro_id.".html";?>" class="name_product"/><?php echo $name;?></a></p>
@@ -153,7 +153,7 @@ class CLS_PRODUCTS{
 			$pro_id=$row['pro_id'];
 			//$catname=$objcat->getNameById($row["cat_id"]); // url 
 			$code = stripslashes($row["code"]);
-			$name = Substring(stripslashes($row["name"]),0,10);			
+			$name = $this->truncateString(stripslashes($row["name"]),25,true);			
 			$old_price=number_format($row["old_price"]);
 			$cur_price=number_format($row["cur_price"]);
 			$cur_price=($cur_price==0)?'Call ':$cur_price."";
