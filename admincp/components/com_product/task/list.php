@@ -2,16 +2,16 @@
 	defined('ISHOME') or die('Can not acess this page, please come back!');
 	$keyword='Keyword';	$action='';	$catid='';
 	
-	if(!isset($_SESSION['EDU_CONTENT_CATID'])) $_SESSION['EDU_CONTENT_CATID']='';
-	if(!isset($_SESSION['EDU_CONTENT_ACT'])) $_SESSION['EDU_CONTENT_ACT']='';
+	if(!isset($_SESSION['PRO_CATID'])) $_SESSION['PRO_CATID']='';
+	if(!isset($_SESSION['PRO_ACT'])) $_SESSION['PRO_ACT']='';
 	
 	if(isset($_POST['txtkeyword'])){
 		$keyword=trim($_POST['txtkeyword']);
-		$_SESSION['EDU_CONTENT_ACT']=$_POST['cbo_active'];
-		$_SESSION['EDU_CONTENT_CATID']=$_POST['cbo_cont'];
+		$_SESSION['PRO_ACT']=$_POST['cbo_active'];
+		$_SESSION['PRO_CATID']=$_POST['cbo_cont'];
 	}
-	$catid = $_SESSION['EDU_CONTENT_CATID'];
-	$action = $_SESSION['EDU_CONTENT_ACT'];
+	$catid = $_SESSION['PRO_CATID'];
+	$action = $_SESSION['PRO_ACT'];
 	
 	$strwhere='';
 	if($keyword!='' && $keyword!='Keyword')
@@ -22,6 +22,7 @@
 		$strwhere.="AND `isactive` = '$action'";
 	if($strwhere!='') $strwhere=' WHERE 1=1 '.$strwhere;
 	//echo $strwhere;
+    
 	if(!isset($_SESSION['CUR_PAGE_PRO']))
 		$_SESSION['CUR_PAGE_PRO']=1;
 	if(isset($_POST['txtCurnpage'])){

@@ -19,7 +19,7 @@ class CLS_CONTENTS{
 					echo $imgtag;
 				echo "</div>";
 				echo "<div class='info'>";
-					echo "<h2><a href='index.php?com=contents&&viewtype=detail&id=".$id."'>".$row['title']."</a></h2>";
+					echo "<h2><a href='".ROOTHOST.$row['title']."-bv".$id.".html'>".$row['title']."</a></h2>";
 					echo "<p>Author: ".$row['author']."</p>";
 					echo "<p>Published on: ".date("d - m - Y",strtotime($row['cdate']))."</p>";
 				echo "</div >";

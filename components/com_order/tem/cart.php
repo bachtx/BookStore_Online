@@ -16,11 +16,6 @@ if(isset($_POST['update_car'])){ //update
 <div class="main_wrap">
 	<div class="sidebar">
 		<h3>Categories</h3>
-		<ul class="ul_all"  >
-			<li class="all"><a href="#" alt ="all">
-				ALL
-			</a></li>
-		</ul>
 		<!-- Lấy dữ liệu động từ cơ sở dữ liệu ra bên ngoài trang chính-->
 		<?php
 			$catalogs=new CLS_CATALOGS();
@@ -35,6 +30,9 @@ if(isset($_POST['update_car'])){ //update
 			if(isset($_SESSION['CART']) && count($_SESSION['CART'])>0) {
 			?>
 			<div id="tabs-1">
+            <?php
+            if(isset($_SESSION['CART']) && count($_SESSION['CART'])>0){
+            ?>
 				<form method='POST' action='' id='frm_cart'>
     				<table width='100%' class='list' cellspacing="0" cellpadding='3'>
     					<tr>

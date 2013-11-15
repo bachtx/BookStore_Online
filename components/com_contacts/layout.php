@@ -30,11 +30,6 @@ if(isset($_POST['submit'])){
 <div class="main_wrap">
 	<div class="sidebar">
 		<h3>Categories</h3>
-		<ul class="ul_all"  >
-			<li class="all"><a href="#" alt ="all">
-				ALL
-			</a></li>
-		</ul>
 		<?php
 			$catalogs=new CLS_CATALOGS();
 			$catalogs->getListCatalogs();

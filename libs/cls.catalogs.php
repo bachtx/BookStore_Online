@@ -31,7 +31,10 @@ class CLS_CATALOGS{
                         {
                             $row1=$obj_sub->Fetch_Assoc();
 							$cat_id=$row1['cat_id'];
-                       	    echo "<li><a href='index.php?com=products&&viewtype=block&cat_id=$cat_id' title='".$row1['name']."'><span>".$row1['name']."</span></a></li>";
+?>
+							<li <?php if((isset($_GET['cat_id']))&& ($_GET['cat_id'] == $cat_id)) echo "class='hover'"?>><a href="<?php echo $row1['name']."-cat".$row1['cat_id'].'.html'?>" title="<?php echo $row1['name']?>"><span><?php echo $row1['name']?></span></a></li>
+<?php 
+                       	    
                         }                        
                     echo '</ul>';
 			}

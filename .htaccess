@@ -3,37 +3,16 @@ RewriteEngine On
 #RewriteCond %{HTTP_REFERER} !^http://(www.)?igf.com.vn/ [nc]
 #RewriteRule .*.(gif|jpg|png)$ http://igf.com.vn/images/igf_logo.PNG [nc]
 
-RewriteRule ^(.*)-b([0-9]*)(.*).html index.php?com=contents&viewtype=article&id=$2&scode=$3
-RewriteRule ^(.*)-nb([0-9]*)(.*).html index.php?com=contents&viewtype=block&id=$2&scode=$3
-RewriteRule ^(.*)-np([0-9]*)-p([0-9]*)(.*).html index.php?com=products&viewtype=block&id=$2&cpar=$3&scode=$4
-RewriteRule ^(.*)-np([0-9]*)(.*).html index.php?com=products&viewtype=block&id=$2&scode=$3
-RewriteRule ^(.*)/(.*)-sp([0-9]*)(.*).html index.php?com=products&viewtype=detail&id=$3&scode=$4
-RewriteRule ^them-gio-hang-sp([0-9]*).html index.php?com=members&viewtype=addcart&id=$1
-RewriteRule ^del-cart-sp([0-9]*).html index.php?com=members&viewtype=delcart&id=$1
-
 RewriteRule ^home.html index.php
 RewriteRule ^contacts.html index.php?com=contacts
 RewriteRule ^payment.html index.php?com=payment
 RewriteRule ^products.html index.php?com=products&viewtype=random
 RewriteRule ^book1.html index.php?com=products&viewtype=book1
 RewriteRule ^search.html index.php?com=products&viewtype=search
-
 RewriteRule ^shopcart.html index.php?com=order&viewtype=cart
 RewriteRule ^order.html index.php?com=order&viewtype=order
-RewriteRule ^(.*)-cat([0-9]*).html index.php?com=products&&viewtype=block&cat_id=$1
-
 RewriteRule ^support.html index.php?com=contents&viewtype=block
-
-RewriteRule  ^(.*)-np([0-9]*)(.*).html index.php?com=products&cur_menu=25
-RewriteRule ^dat-hang(.*).html index.php?com=members&viewtype=order&scode=$1
-RewriteRule ^dat-hang(.*).html index.php?com=members&viewtype=order&scode=$1
-RewriteRule ^dang-ky-gift.html index.php?com=members&viewtype=regis-gift
-RewriteRule ^dang-ky(.*).html index.php?com=members&viewtype=register&scode=$1
-RewriteRule ^dang-xuat.html index.php?com=members&viewtype=logout
-RewriteRule ^gio-hang.html index.php?com=members&viewtype=cart
-RewriteRule ^ca-nhan.html index.php?com=members&viewtype=private
-RewriteRule ^thong-tin-ca-nhan.html index.php?com=members&viewtype=info
-RewriteRule ^danh-sach-don-hang.html index.php?com=members&viewtype=orderlist
-RewriteRule ^danh-sach-san-pham.html index.php?com=members&viewtype=prolist
-RewriteRule ^danh-sach-thanh-viet.html index.php?com=members&viewtype=memlist
-RewriteRule ^lien-he.html index.php?com=contact&cur_menu=70
+RewriteRule ^(.*)-cat([0-9]*).html index.php?com=products&viewtype=block&cat_id=$2
+RewriteRule ^(.*)-([0-9]*).html index.php?com=products&viewtype=detail&id=$2
+RewriteRule ^(.*)-bv([0-9]*).html index.php?com=contents&viewtype=detail&id=$2
+RewriteRule ^(.*)-gr([0-9]*).html index.php?com=contents&viewtype=block&id=$2

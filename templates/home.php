@@ -73,7 +73,7 @@
                     <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/products.html') echo "class='hover'"?>><a href="products.html">Products</a></li>
 					<li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/book1.html') echo "class='hover'"?>><a href="book1.html">Books 1$</a></li>
                     <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/payment.html') echo "class='hover'"?>><a href="payment.html">Payment</a></li>
-                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/support.html') echo "class='hover'"?>><a href="#">Support</a></li>
+                    <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/support.html') echo "class='hover'"?>><a href="support.html">Support</a></li>
                     <li <?php if($_SERVER['REQUEST_URI'] == '/BookStore_Online/contacts.html') echo "class='hover'"?>><a href="contacts.html">Contacts</a></li>
                 </ul>
                 <script type="text/javascript">
@@ -108,15 +108,16 @@
 					$objcontents = new CLS_CONTENTS;
 					for ($i=1;$i<=3;$i++){
 					$objcontents=new CLS_CONTENTS();
+                    $name=$objcontents->getNameCat($i);
 					?>
 				<div class='col' id='col<?php echo $i; ?>'>
-						<h4><a href="<?php echo ROOTHOST;?>index.php?com=contents&&viewtype=block&id=<?php echo $i?>"><?php echo $objcontents->getNameCat($i); ?></a></h4>
+						<h4><a href="<?php echo ROOTHOST.$name."-gr".$i.".html";?>"><?php echo $objcontents->getNameCat($i); ?></a></h4>
 						<ul>
 							<?php
 							$objcontents->getList(' AND `cat_id` ='.$i,"",' LIMIT 0,7');
 							while($row=$objcontents->Fetch_Assoc()){
 							?>                   
-								<li><a href="<?php echo ROOTHOST;?>index.php?com=contents&&viewtype=detail&id=<?php echo $row['con_id']?>"><?php echo $row['title'];?></a><span class="border"></span></li>
+								<li><a href="<?php echo ROOTHOST.$row['title']."-bv".$row['con_id'].".html";?>"><?php echo $row['title'];?></a><span class="border"></span></li>
 				   <?php }?>
 				   </ul>
                </div><!--.col-->
