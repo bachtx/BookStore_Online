@@ -36,7 +36,7 @@ $total_rows="0";
 							$_SESSION["CUR_PAGE_PRO"]=$cur_page;
 						}
 						$start_r=($cur_page-1)*MAX_ITEM;
-					$obj->GetListOneDolar(" AND `cur_price` =1 ",' ORDER BY `mdate` DESC '," LIMIT $start_r,".MAX_ITEM);?>
+					$obj->GetListPro(" AND `cur_price` =1 ",' ORDER BY `mdate` DESC '," LIMIT $start_r,".MAX_ITEM);?>
 					<div class="pagin"><?php paging_index($total_rows,MAX_ITEM,$cur_page); ?></div>
 					<?php }?>
 			</div>
